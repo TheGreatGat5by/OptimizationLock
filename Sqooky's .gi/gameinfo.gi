@@ -681,7 +681,7 @@ GameInfo
         // ================ Preferences ================
         // --- 0. IMPORTANT ---
         citadel_camera_use_vmdl_flatten_vertical "false" // This command should improve responsiveness of mouse input makes rem and venator's cameras move slightly downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
-        citadel_portrait_world_renderer_off      "false" // Disables character models in shop and endgame screen                                            [def: "false"]
+        citadel_portrait_world_renderer_off      "true" // Disables character models in shop and endgame screen                                            [def: "false"]
         citadel_trooper_glow_disabled            "1"     // 1 = Disable friendly/enemy minion glow.                                                         [def: "0"]
         cl_phys_enabled                          "true"  // Disables all physics. This means ragdolls just maintain the last pose and boxes don't fall over [def: "true"]
         r_citadel_enable_pano_world_blur         "true"  // This command disables the blur in the shop and improves the performance of the shop DRAMATICALLY however it can cause visual issues with the pause menu on nvidia systems running vulkan. Please experiment. [def: "true"]
@@ -689,9 +689,9 @@ GameInfo
         r_particle_max_size_cull                 "900"   // [def: "1200"] // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway. // So particle culling is handled by the CPU in deadlock, if you have GPU overhead to spare, consider lowering this value.
         r_postprocess_enable                     "true"  // Disables colorcorrection and other similar effects so the game will look duller
         sc_screen_size_lod_scale_override        "0.55"  // Controls LOD scale. Lower values will make sinners and playermodels look worse "my sinner's lights are little triangles" [def: "-1"]
-        steam_inputhandler_enabled               "true"  // This disables controller support when set to false. Setting to false should improve performance if you're not on a steam deck, but some people are, and I don't want an influx of "why no work with controller"  [def: "true"]
+        steam_inputhandler_enabled               "false"  // This disables controller support when set to false. Setting to false should improve performance if you're not on a steam deck, but some people are, and I don't want an influx of "why no work with controller"  [def: "true"]
         lb_enable_dynamic_lights                 "false" // SET THIS TO TRUE TO MAKE HERO PORTRAITS HAVE COLOR IN THE SHOP AND ENDGAME *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
-        // mm_prefer_solo_only                   "true"  // If I understand what this command does, this command controls whether or not you are matched with other solo queue players. For me this dramatically improved the solo queue performance but I am not sure if that is placebo. [def: "false"]
+        mm_prefer_solo_only                   "true"  // If I understand what this command does, this command controls whether or not you are matched with other solo queue players. For me this dramatically improved the solo queue performance but I am not sure if that is placebo. [def: "false"]
 
         // --- 1. Outlines ---
         citadel_boss_glow_disabled                             "1"    // Disables boss and walker glow/highlight effect.                  [def: "0]
@@ -711,8 +711,8 @@ GameInfo
         citadel_damage_report_enable                    "1"         // Enables/Disables incoming/outgoing damage tab (tuning this off is very questionable but okay). [def: "1"]
         citadel_damage_text_batching_window_ability     "1000"      // How long to wait until batching damage text.
         citadel_distance_mouse_move_for_minimap_drawing "1"         // this command makes drawing on the minimap more precise so you can actually doodle on it :D makes me happy [def: "15"]
-        citadel_hideout_ball_show_juggle_count          "1"         // Shows a fun juggle count minigame for hideout ball.              [def: "0"]
-        citadel_hideout_ball_show_juggle_fx             "1"         // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
+        citadel_hideout_ball_show_juggle_count          "0"         // Shows a fun juggle count minigame for hideout ball.              [def: "0"]
+        citadel_hideout_ball_show_juggle_fx             "0"         // Shows juggle visual FX for hideout ball minigame.                [def: "0"]
         citadel_hud_objective_health_debug_show_midboss "false"     // This makes midboss' health bar visible whenever it's able to be rendered. I like it, you might not [def: "false"]
         citadel_hud_objective_health_enabled            "2"         // 0=Off, 1=Shrines, 2=T1/T2, 3=Barracks.                           [def: "2"]
         citadel_unit_status_old_update_rate             "15"        // How frequently health bars can update. Lowering it should improve performance    [def: "30"]
@@ -782,7 +782,7 @@ GameInfo
         r_nearz      "7"    // Opposite of r_farz. removes things closer to you. [def: "-1"]
 
         // ================ IMPORTANT ================
-        thread_pool_option "2" // If I understand correctly, this should be how threads are handled relative to the game, but there isn't a clear indication of what changing it even does. For now I have it at -1 which is the default, but your mileage may vary. [def: "-1"]
+        thread_pool_option "6" // If I understand correctly, this should be how threads are handled relative to the game, but there isn't a clear indication of what changing it even does. For now I have it at -1 which is the default, but your mileage may vary. [def: "-1"]
         // 1 gives "GlobalThreadPoolMode" "efficiency"
         // 2 removes it from boot.vcfg
         // 3 gives "GlobalThreadPoolMode" "undifferentiated"
