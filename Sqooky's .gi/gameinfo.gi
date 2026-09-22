@@ -1,120 +1,3 @@
-//      If you would like to donate as a means of showing thanks I have a kofi.     \\
-//      https://ko-fi.com/sqooky                                                    \\
-//           ...       ....
-//        ...   ..   ..    ...
-//       .        . .  o      .
-//      .          v           .
-//      . o       ___     o    .
-//      .     _---   -_      .
-//     o .   /^        '\     .
-//        . /   _- /|.  |  o
-//          |f1/0   @\Y?u\
-//      o   /u'\_ v _/ f:j|    o
-//         /!#%|'-_- '\%k*|
-//     o   |*@/        \_/
-//         \)&|
-// OptimizationLock v2.10 by Sqooky with help from others <3
-
-// As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
-//  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
-//- Sqooky:             I am the primary developer and maintainer of the project, but without everyone else here this project would not be maintained to this degree.
-//- JasperP:            My personal hero. (Valve dev who reached out to me due to my work on the project.)
-//- Boot:               Provided the csm cvars which had a notable performance improvement.
-//- Brullee:            Removed fake cvars, redundant commands, added cvarlist.md, and reformatted config.
-//- Kaizuchaneru:       While not directly invovled in the deveopment, they tested most cvars.
-//- Tamara Mochaccina:  Contributed vindicta scope fix and the fog fix.
-//- Liah:               Found a cvar causing a weird issue.
-
-// Donors. Thank you so much. Even considering that you would view my work as deserving of any donation at all is incredible. I love you all
-//- Boot:           Gave me FIVE DOLLARS and is just a wonderful person and friend at a baseline
-//- Sonny:          Gave me FIVE DOLLARS and waited through me setting up a paypal account and didn't change their mind
-//- Soulx:          Gave me FIVE DOLLARS and told me about spirolactone
-//- Xeno:           Very politely waited for me to figure out how to accept donations and gave me FIVE DOLLARS
-//- N8Fan:          Gave me TEN DOLLARS so I could play vampire survivors
-//- Cos:            GAVE ME SEVENTY DOLLARS FOR NO FUCKING REASON I LOVE YOU SO MUCH?????????????????????????
-//- Wely:           Gave me THIRTY DOLLARS IN STEAM GIFT CARD MONEY????? WOA
-//- Prot4g:         Gave me TWENTY DOLLARS WOA I LOVE YOU!!!
-//- catmasta:       Gave me TWO DOLLARS!!
-//- a distant admirer: Gave me TEN DOLLARS and a boon!!!
-//- Namea:          Gave me TEN DOLLARS in steam gift cards and was unbelivably polite. I love you so much.
-//- Kevin:          Gave me TWO DOLLARS also made me trip and write this as kelvin twice. I'm such a mcginnis chud.
-//- jusbeprophet:   Gave me ONE DOLLAR! Bless their heart
-//- Supporter:      Gave me FIVE DOLLAR!!! many thanks to them.
-//- WhoLovesDean:   Incredibly kind fellow and gave me THIRTY DOLLARS
-//- john6674:       Gave me TWENTY FIVE DOLLARS that's wild. Thank you john, please take care <3
-//- noelle:         Gave me FIVE DOLLAR and is nice with a cool username. Tyyyy
-//- exazinho:       First person to subscribe to me on kofi. That's amazing. Huge thank you exazinho. I'm glad you saw my little doodle <3
-//- Shotty:         Left an incredibly nice donation message and gave me THIRTY DOLLAR. I'm honored please take care.
-//- TheLastFriendly: GAVE ME 100 DOLLARS FOR CLOTHES  I LOVE YOU SO MUCH
-//- Olly/Moozen:    Has been an incredible friend for putting up with me. Also gave me thirty bucks for working on some stuff for them ily <3
-//- Neytir:         Extremely fun person to talk to and consitent viewer of my streams. Gave me twenty bucks and subscribed on twitch so I could buy balatro! Much love
-//- Bytenode:       Taught me everything I know about hud editing, gave me EIGHTY BUCKS AND FIVE CENTS gave me pronoun palace, subscribed on twitch, and is incredibly nice across the board. Much much much love.
-//- John Dreamerman: Gave me money in my dream after I explained what r_farz did to him. Isn't bytenode.
-//- Martinchodou:   Gave me ONE DOLLAR. Much love. Please take care.
-//- HaloKat/June:   Gave me FIVE dollar for breast reduction surgery. Incredible bestie.
-//- 6Daves:         Incredibly nice person and has been continually supportive for the duration I have been working on the project. Gave me two dollars and subscribed on twitch. Much love. <3
-//- Ehmed:          First twitch subscriber and certified awesome person.
-//- NawyLo3b:       A twitch sub :D
-//- leroyaxrs:      Incredibly kind and supportive person I'm so glad I met. Thank you for being a delight to talk with.
-//- eleanordl:      First person to recognize me ingame and was super nice. Also subscribed on twitch which was incredibly nice.
-//- LokiSquared:    Incredibly polite and fun person to talk to. Also gave me a twitch sub :D
-//- Mr. Miyagi:     Made my summer and gave me slay the spire 2 on steam. My goat fr fr
-//- Connermadethis: Donated FORTY DOLLAR OH MINE GOTT THANK YOU
-//- Noelle:         Gave me FIVE DOLLAR and invited me to her matrix instance. I love you :D
-//- Blerg:          Gave me FIFTY FIVE DOLLARS OH MY GOD TY please let me know if I can help
-//- Drykdap:        Gave me TEN DOLLAR thank youuuuuuuuuuuuuuuuuuuuuuuuu please call me if need be
-//- Salem:          Gave me FIVE DOLLAR for helping them with performance and tech support in the official deadlock server. thank youuuuuuuu
-//- attention seeker: for donating 18 dollars (one dollar for each % improvement of 1% lows lol)
-//- DungeonMaestro: Gave me a dollar for a bit
-//- Smugfox:        Gave me five DOLLAR out of kindness :)
-//- TheTurtlezsz:   Gave me FIVE DOLLAR asking for tech support :D
-//- Supporter:      Gave me two dollar anoymously.
-//- Umah:           Gave me TEN DoLLAR for cute clothes. I love you so much thank you
-
-
-
-// Translators
-//- Egyptianscale: Translated to Russian
-//- Tamara Mochaccina and Heathen: Translated to Spanish
-//- Linaa and anartoast: Translated to Portuguese
-//- Macchiako:  Translated to Bulgarian
-//- Cyvoid:     Translated to Italian
-//- Vi:         Translated to French
-//- ZHTodd223:  Translated to Chinese
-//- Sasha11711: Translated to Ukrainian!
-
-// Misc
-//- Artemon121:     Made the Citadel cvar unhider, which helped Abdalla fetch cvars and test in-game.
-//- Dacooder:       Made a lovely video showcasing myself and my work
-//- Kin:            Did an insane amount of benchmarking unprompted.
-//- Kunet:          Made a formatter for the gameinfo sytax! This is why things are properly indented! That's LIT.
-//- Maihdenless:    Started the original OptimisationLock & its Discord.
-//- Piggy:          Let me mirror his config.
-
-// Wonderful People Who Sourced Screenshots for me <33333
-//- Abooo
-//- Dirtkiller23/Aricole
-//- Thai
-//- Boot
-//- Lina 🜏
-
-// Cool people I've met because of this project who I want to thank anyway
-//- 6Daves
-//- Achira
-//- Anartoast
-//- Boot
-//- GoreDaughter
-//- Jaden
-//- Jasper
-//- Jb
-//- Kin
-//- Krisha
-//- Masteroms
-//- PeachCebo
-//- Tamara Mochaccina
-//- And you, thank you for using this and making my day <3. Please take care of yourselves.
-
-
 GameInfo
 {
     game        "citadel"
@@ -666,18 +549,6 @@ GameInfo
 
     ConVars
     {
-
-        //      If you would like to donate as a means of showing thanks I have a kofi.     \\
-        //      https://ko-fi.com/sqooky                                                    \\
-
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 2.10 -------- \\
-        // The github is here https://github.com/Sqooky/OptimizationLock  \\
-        // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
-        // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
-
-        // IF YOU ARE MODIFYING A COMMAND AND NOTHING IS CHANGING SEE BELOW
-        //this_is_an_example_comment "true"     // This command is commented out, represented by the // at the beginning of the line. Editing it will not do anything. To mess with it remove the //
-
         // ================ Preferences ================
         // --- 0. IMPORTANT ---
         citadel_camera_use_vmdl_flatten_vertical "false" // This command should improve responsiveness of mouse input makes rem and venator's cameras move slightly downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
@@ -737,8 +608,8 @@ GameInfo
 
         // --- 5. FPS Caps & Minimized Throttling ---
         engine_low_latency_sleep_after_client_tick "false" // When r_low_latency is enabled, this moves the low latency sleep on tick frames to happen after client simulation. [def: "false"]
-        panorama_max_fps                           "30"    // Menu FPS.                                                        [def: "120"]
-        panorama_max_overlay_fps                   "30"    // Fps In the settings/esc menu.                                    [def: "60"]
+        panorama_max_fps                           "120"    // Menu FPS.                                                        [def: "120"]
+        panorama_max_overlay_fps                   "60"    // Fps In the settings/esc menu.                                    [def: "60"]
 
         // --- 6. Object Culling ---
         r_size_cull_threshold "0.9" // *Culls small objects sooner based on screen size threshold (higher = more culling). [def: "0.8"]
