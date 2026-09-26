@@ -559,7 +559,7 @@ GameInfo
 
         // --- 2. Field of View ---
         citadel_camera_hero_fov "90"   // The field of view angle of the camera when following a hero.     [def: "90"]
-        r_aspectratio           "2.15" // 1.75=80fov | 2.15=90fov | 2.49=100fov (every .15 interval = 5 fov).
+        r_aspectratio           "3.3" // 1.75=80fov | 2.15=90fov | 2.49=100fov (every .15 interval = 5 fov).
 
         // --- 3. HUD ---
         citadel_crosshair_hit_marker_duration       "0.01" // Removes the hitmarker when shooting people.                      [def: "0.1"]

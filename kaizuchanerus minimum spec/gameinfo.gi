@@ -557,7 +557,7 @@ GameInfo
     ConVars
     {
         //Stuff that matters to preference:
-        r_aspectratio "2.3" // FOV: 1.33=70fov | 1.56=75fov | 1.75=80fov | 2.0=85fov | 2.15=90fov | 2.49=100fov | 3.0=110fov | 3.5=120fov
+        r_aspectratio "3.3" // FOV: 1.33=70fov | 1.56=75fov | 1.75=80fov | 2.0=85fov | 2.15=90fov | 2.49=100fov | 3.0=110fov | 3.5=120fov
 
         // Camera smoothing/wobble — preference only, no FPS impact:
         citadel_camera_use_vmdl_flatten_horizontal "false" // disable horizontal smoothing
