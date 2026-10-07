@@ -13,7 +13,7 @@
 //         /!#%|'-_- '\%k*|
 //     o   |*@/        \_/
 //         \)&|
-// OptimizationLock Version 3.3 by Sqooky with help from others <3
+// OptimizationLock Version 3.4 by Sqooky with help from others <3
 
 // As much as I would love to say I did this alone, I did not. These are the amazing people who deserve as much praise as I, if not more
 //  Major thanks to all of these individuals from the bottom of my heart. They are all lovely.
@@ -83,6 +83,28 @@
 //- odie:           Commissioned me!
 //- sixsav:         GAVE ME TWENTY DOLLAR... wonderful and I owe them
 //- salvator:       Game me FVIE DOLLAR and is lovely
+//- CHANG:
+//- Shotty:
+//- maeaissance:
+//- sae sushio:
+//- dec:
+//- onetapman:
+//- Habitus:
+//- max:
+//- bingbinginc:
+//- aeyri:
+//- Supporter:
+//- soulx:
+//- Supporter:
+//- NSH:
+//- crush:
+//- Jill:
+//- Stable:
+//- Supporter:
+//- Isabellawa:
+//- nostmau:
+//- NicanorGordon:
+//- Harry:
 
 
 
@@ -198,20 +220,23 @@ GameInfo
             Game_UILanguage "citadel_*LANGUAGE*"
 
             // These are optional low-violence paths. They will only get mounted if you're in a low-violence mode.
-            //Game                citadel/cvar_unlocker
-            Game_Language "citadel_*LANGUAGE*"
-            Game          "citadel/addons"
+            Game_UILanguage  "citadel_*LANGUAGE*"
+            Game_LowViolence "citadel_lv"
 
             Mod   "citadel"
             Write "citadel"
+            Game  "citadel/custom"
+            Game  "citadel/addons"
             Game  "citadel"
-            Mod   "core"
-            Write "core"
             Game  "core"
         }
 
-        // UserSettingsPathID       "USRLOCAL" // this needs to be commented out in order to have video.txt usable
         LegacyUserSettingsPathID "MOD"
+        UserSettingsPathID       "USRLOCAL" // this needs to be commented out in order to have citadel/cfg/video.txt usable, however if this is commented out it will force you into low violence mode (make drifter and mina purple)
+        // If it isn't commented out then you will need to edit the video.txt located at
+        // Windows: \steam\userdata\your_steam_id\1422450\local\cfg
+        // Linux:  ~/.steam/steam/userdata/your_steam_id/1422450/local/
+
     }
 
     MaterialSystem2
@@ -729,7 +754,7 @@ GameInfo
         //      If you would like to donate as a means of showing thanks I have a kofi.     \\
         //      https://ko-fi.com/sqooky                                                    \\
 
-        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.3 -------- \\
+        // -------- Performance Config! Sqooky's.gi / OptimizationLock -- ver. 3.4 -------- \\
         // The github is here https://github.com/Sqooky/OptimizationLock  \\
         // In-Depth Tutorial: https://www.youtube.com/watch?v=zC3wBYY98vU \\
         // The gamebanana:https://gamebanana.com/mods/656341 (it's usually behind, please check the github) \\
@@ -739,12 +764,13 @@ GameInfo
 
         // ================ Preferences ================
         // --- 0. IMPORTANT ---
+
         mm_prefer_solo_only                   "true"  // If I understand what this command does, this command controls whether or not you are matched with other solo queue players. For me this dramatically improved the solo queue performance but I am not sure if that is placebo. [def: "false"]
         citadel_camera_use_vmdl_flatten_vertical "true" // This command should improve responsiveness of mouse input makes rem and venator's cameras move slightly downwards when aiming down scope. Not exactly a dealbreaker but might be undesirable for some.                                                                                                                                      [def: "true"]
         citadel_portrait_world_renderer_off      "true" // Disables character models in shop and endgame screen                                            [def: "false"]
         citadel_trooper_glow_disabled            "0"     // 1 = Disable friendly/enemy minion glow.                                                         [def: "0"]
         cl_phys_enabled                          "true"  // Disables all physics. This means ragdolls just maintain the last pose and boxes don't fall over [def: "true"]
-        lb_enable_dynamic_lights                 "true" // SET THIS TO TRUE TO MAKE HERO PORTRAITS HAVE COLOR IN THE SHOP AND ENDGAME *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
+        lb_enable_dynamic_lights                 "true"  // SET THIS TO TRUE TO MAKE HERO PORTRAITS HAVE COLOR IN THE SHOP AND ENDGAME *Disables dynamic lights eg. walker, shop, tp, character abilities etc. (hero silhouettes go dark in menus as a side effect) [def: "1"]
         r_citadel_enable_pano_world_blur         "true"  // This command disables the blur in the shop and improves the performance of the shop DRAMATICALLY however it can cause visual issues with the pause menu on nvidia systems running vulkan. Please experiment. [def: "true"]
         r_particle_explicit_fetch                "false" // [def: "false"]        // I believe this improves performance but will make soul orbs a bit difficult to see
         r_particle_max_size_cull                 "900"   // [def: "1200"] // Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway. // So particle culling is handled by the CPU in deadlock, if you have GPU overhead to spare, consider lowering this value.
@@ -756,6 +782,11 @@ GameInfo
         // --- Render Distance ---
         r_farz       "7000" // This controls the far clipping plane, ie building/player popin   [def: "-1"]
         r_mapextents "7000" // Far clipping plane, this will make buildings pop in and out      [def: "16384"]
+
+        // --- Health Bar Minor Tweaks ---
+        // citadel_unit_status_delta_decay_delay   "0"   // The delay between doing damage and havin the yellow damage indicator appear [def: "0.5"]
+        // citadel_unit_status_delta_decay_rate    "10"  // How quickly the yellow "you're dealing damage" indicator fades [def: "0.5"]
+        // citadel_unit_status_recent_damage_time  "inf" // how long to show someone's numerical health value when you shoot them. Inf means infinite, but will cause the healthbar to jiggle/shake forever. [def: "0.25"]
 
 
 
@@ -805,7 +836,7 @@ GameInfo
         panorama_max_overlay_fps                   "30"    // Fps In the settings/esc menu.                                    [def: "60"]
 
         // --- 6. Camera Tweaks ---
-        citadel_melee_shake_duration 0
+        citadel_melee_shake_duration "0"
         // citadel_camera_listening_offset    "-1"   // To be completely honest I have no idea but I want to test this.  [def: "0"]
         citadel_camera_soft_collision_angle         "75"    //                                                                  [def: "75"]
         citadel_camera_use_vmdl_flatten_horizontal  "false" // From my understanding of how these commands work, they slightly smooth camera inputs. This should make the camera more responsive?   [def: "true"]
@@ -1161,7 +1192,7 @@ GameInfo
         fog_enable               "false"
         fog_enableskybox         "false" // I doubt the fog commands actually are modifiable but I am maintaining their inclusion for posterity
         volume_fog_enable_jitter "false" // Don't think I can
-        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.3 ------------------------------- \\
+        // --------------------------------- END OF CONFIG OptimizationLock -- ver. 3.4 ------------------------------- \\
 
 
         // ====================== SV commands we cannot change but I want to maintain documentation for ======================

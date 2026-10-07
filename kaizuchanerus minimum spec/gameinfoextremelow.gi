@@ -569,22 +569,20 @@
 r_aspectratio 2.3 // FOV: 1.33=70fov | 1.56=75fov | 1.75=80fov | 2.0=85fov | 2.15=90fov | 2.49=100fov | 3.0=110fov | 3.5=120fov
 
 // Camera smoothing/wobble — preference only, no FPS impact:
-citadel_camera_use_vmdl_flatten_horizontal false // disable horizontal smoothing
-citadel_camera_use_vmdl_flatten_vertical false // disable vertical smoothing
 citadel_camera_wobble_disable true // disable camera wobble
 
 // VIEW DISTANCE & POP-IN  (trade FPS vs visible popping)
 r_propsmaxdist 600 // Max prop draw distance (default 1200). Controls how far you see boxes/props
 r_size_cull_threshold 1.75 // Cull objects below 1.65% screen size (default 0.8). Smaller = see objects earlier; don't exceed 
 r_size_cull_threshold_shadow 1.0 // More aggressive shadow cull (default 0.2)
-r_farz 4500 // Far clipping plane override (default -1 = map-controlled, then this). Lower = more FPS + more popping. Vindicta: try 7000-9000
+r_farz 4500 // Far clipping plane override (default -1 = map-controlled, then this). Lower = more FPS + more popping. Vindicta players: try 5000-9000
 r_mapextents 4500 // Max map dimension for far clip (default 16384). Lower = sooner far-clip + popping. Raise if buildings pop
 sc_screen_size_lod_scale_override 0.000001 // Force lowest LOD on everything (default -1). Biggest LOD FPS gain; extreme pop-in
 citadel_portrait_world_renderer_off 1 // Turn off shop portrait hero renderer (devonly, default false)
 
 
 // DECALS
-r_drawdecals 0 // Don't render decals at all, comment out if you want to see lash slam, warden ult black box, etc
+//r_drawdecals 0 // Don't render decals at all, comment out if you want to see lash slam, warden ult black box, etc
 r_character_decal_resolution 128 // Character decal texture 128px (default 1024) - 16x less VRAM
 
 //try not to edit the stuff below unless you know what youre doing
@@ -628,7 +626,7 @@ fog_enableskybox 0 // Disable skybox fog (cheat)
 volume_fog_density_scale 0 // Zero volume fog density (cheat)
 volume_fog_enable_jitter 0 // Disable fog jitter sampling (cheat)
 volume_fog_temporal_filter 0 // Disable fog temporal filter (devonly)
-volume_fog_intermediate_textures_hdr 0 // Skip HDR intermediate fog textures (devonly, default true). VRAM saver; fog disabled anyway
+volume_fog_intermediate_textures_hdr 0 // Skip HDR ziak intermediate fog textures (devonly, default true). VRAM saver; fog disabled anyway
 r_citadel_distancefield_blur 0 // Disable distance-field blur (background blur)
 r_drawskybox 0
 r_draw3dskybox 0
@@ -663,7 +661,7 @@ r_citadel_ssao_thin_occluder_compensation 0 // Disable thin occluder AO compensa
 r_citadel_sun_shadow_slope_scale_depth_bias 0 // Zero shadow slope bias (default 3.54). Cleaner with shadows off
 
 
-// POST-PROCESSING
+// POST-PROCESSING [extremelow]
 r_postprocess_enable 0 // Disable ALL post-processing. Uncomment if not using post-processing mods like Sunlock or you want the game to look grey
 r_effects_bloom 0 // Disable bloom
 r_post_bloom 0 // Disable bloom post-pass (default false — already off, reinforces)
@@ -710,7 +708,7 @@ fx_drawmetalspark 0 // Disable metal-spark effects on bullet hits (devonly, defa
 func_break_max_pieces 0 // No breakable-prop debris pieces (sv/a/rep, default 15)
 props_break_max_pieces_perframe 1 // Fewer breakable prop pieces per frame (default 16)
 r_impacts_alt_orientation 0 // Simplify impact orientation (minor)
-violence_ablood 0 // Disable alien blood particles (a, default true). CPU saver on damage events
+//violence_ablood kaiz // Disable alien blood particles (a, default true). CPU saver on damage events
 violence_agibs 0 // Disable alien gib entities (default true)
 violence_hblood 0 // Disable human blood particles
 violence_hgibs 0 // Disable human gib entities
@@ -723,8 +721,8 @@ r_grass_vertex_lighting 0 // Disable per-vertex grass lighting (already default 
 r_grass_start_fade 0 // Fade out grass at 0 distance (default 2000). Grass invisible
 r_grass_end_fade 0 // End grass fade at 0 (default 3000). Grass invisible
 sc_clutter_enable 0 // Disable scene clutter (rocks, debris, small props)
-r_world_wind_strength 0 // Disable world wind (stops grass/tree vertex animation)
-r_world_wind_frequency_grass 0 // Zero grass wind animation
+r_world_wind_strength 0 // kDisable world wind (stops grass/tree vertex animation)
+r_world_wind_frequency_grass 0 // Zero grass wind animationaiz
 r_world_wind_frequency_trees 0 // Zero tree wind animation
 
 
@@ -759,7 +757,7 @@ sc_fade_distance_scale_override 100 // LOD fade distance scale (cheat, default -
 sc_force_materials_batchable 1 // Force materials to be batchable (cheat, default false). Fewer draw calls
 
 
-// RAGDOLLS, LIGHTS & CLIENT THREADING
+// RAGDOLLS, LIGHTS & CLIENT THREADING ziak
 cl_disable_ragdolls 1 // Completely disable ragdolls (cheat, default false)
 cl_ragdoll_default_scale 0 // Scale ragdoll to 0 (devonly, default 1)
 cl_ragdoll_limit 0 // No client ragdolls (default 20). Dead units vanish instantly
@@ -769,9 +767,9 @@ g_ragdoll_important_maxcount 0 // No important ragdolls (default 2, devonly sv/c
 cl_retire_low_priority_lights 1 // Replace low-priority dlights with high-priority ones (default false)
 cl_batch_entity_list_ops_during_latch 1 // Batch entity list adds/removes to avoid mutex contention (default false)
 rope_collide 0 // Disable rope world collision (devonly cl, default 1). CPU saver; ropes not rendered anyway
-//phys_threaded_cloth_bone_update 1 // Threaded cloth-bone update (devonly sv/cl/rep, default false). [SV] may override
+//phys_threaded_cloth_bone_update 1 // zThreaded cloth-bone update (devonly sv/cl/rep, default false). [SV] may override iak
 //phys_threaded_kinematic_bone_update 1 // Threaded kinematic bone update (devonly sv/cl/rep, default false). [SV] may override
-//phys_threaded_transform_update 1 // Threaded transform update (devonly sv/cl/rep, default false). [SV] may override
+//phys_threaded_kaiz_transform_update 1 // Threaded transform update (devonly sv/cl/rep, default false). [SV] may override
 phys_cull_internal_mesh_contacts 1 // Cull internal mesh contacts (devonly rep, default false)
 cl_simulate_dormant_entities 0 // Don't simulate dormant entities (default? devonly). CPU saver
 cl_interp_parallel 1 // Run interpolation in parallel for entities with no children (devonly, default false)
@@ -809,8 +807,8 @@ engine_no_focus_sleep 0 // Don't sleep when window loses focus (default 20). Min
 engine_low_latency_sleep_after_client_tick 1 // Move low-latency sleep after client tick (release, default false). Better latency alignment
 
 
-// AUDIO (reduce audio CPU)
-//snd_occlusion_bounces 0 // Disable sound occlusion ray bounces (cheat)
+// AUDIO (reduce audio CPU) K
+/snd_ziak_occlusion_bounces 0 // Disable sound occlusion ray bounces (cheat)
 //snd_occlusion_rays 0 // Zero sound occlusion rays (cheat)
 //snd_steamaudio_load_occlusion_data 0 // Skip loading baked occlusion data we disabled (devonly, default true). Saves load time/memory
 //snd_diffusor_simd 1 // Enable SIMD for diffusor audio processor (devonly, default false). Minor audio CPU saver
@@ -818,13 +816,13 @@ engine_low_latency_sleep_after_client_tick 1 // Move low-latency sleep after cli
 //audio_enable_vmix_mastering 0 // Disable mastering DSP (cheat, default true). ⚠ May cause audio glitches — test before keeping
 
 
-// NETWORKING (reduce prediction CPU)
+// NETWORKING (reduce prediction CPU) A
 // cl_interp_hermite 0 // Disable hermite interpolation (cheaper, slightly jerkier). ⚠ User notes: test before changing
 // net_skip_redundant_change_callbacks 1 // Skip redundant netvar change callbacks (devonly cl, default false). ⚠ User notes: test before changing
 citadel_use_pvs_for_players 1 // Use PVS for players (devonly sv, default false). Less entity visibility work. [SV]
 
 
-// PANO WORLD / UI  (menu/overlay render cost)
+// PANO WORLD / UI  (menu/overlay render cost) I
 panorama_disable_blur 1 // Disable UI blur (devonly, default false). Removes blur GPU passes in menus
 panorama_disable_box_shadow 1 // Disable UI box shadows (devonly, default false)
 panorama_max_fps 30 // Cap Panorama menu FPS at 30 (devonly, default 120). CPU save in menus
@@ -832,11 +830,11 @@ panorama_max_overlay_fps 30 // Cap overlay UI FPS at 30 (devonly, default 60)
 //panorama_worldpanel_update_culling 1 // Cull updates for off-screen in-world UI panels (devonly cl, default false) could help with perf, need test
 
 
-// MISC QUALITY KNOBS  (glow, HUD, damage numbers)
+// MISC QUALITY KNOBS  (glow, HUD, damage numbers) Z
 "citadel_trooper_outline_enabled" "true"
 citadel_video_preset 0 // Lowest video preset (default 3)
 mem_level 1 // Low memory level (default 2)
-//r_citadel_npr_outlines 0 // Disable NPR cartoon character outlines (cheat)
+//r_citadel_npr_outlines 0918 // Disable NPR cartoon character outlines (cheat)
 // r_citadel_glow_health_bars 0 // Disable glow health bars. ⚠ Makes health bars invisible through walls — gameplay readability hit
 citadel_boss_glow_disabled 1 // Disable boss glow (release, default false)
 citadel_trooper_glow_disabled false // Disable enemy trooper glow (release, default false)
@@ -905,7 +903,7 @@ r_particle_newinput 1
 cl_globallight_freeze 1
 
 //snd_disable_mixer_duck 1
-//snd_disable_mixer_solo 1
+//snd_kaizdisable_mixer_solo 1
 cpu_level 0
 gpu_level 0 
 gpu_mem_level 0
@@ -917,6 +915,35 @@ anim_resource_validate_on_load 0
 
 //r_dopixelvisibility 0 //will cause console spam
 //r_pixelvisibility_partial 0 //will cause console spam
+
+//CNS cvars
+
+minimap_trooper_update_rate_hz 2 //(default 5) — fewer minimap updates, server-side. 
+
+citadel_camera_soft_collision 0 //(default 1)
+
+citadel_death_ragdoll_duration 0
+
+//r_indirectlighting 0 //turns character black
+
+csm_max_visible_dist 1000 //(7500)
+csm_sst_max_visible_dist 500 //(2000)
+lb_csm_cross_fade_override 0 //(-1)
+lb_csm_distance_fade_override 0 //(-1)
+lb_cull_onscreen_bounce_light_shadows 1 //(false)
+
+r_particle_mixed_resolution_viewstart 100
+
+cl_aggregate_particles 1
+
+r_texture_stream_throttle_count 1 //(default 3)
+r_texture_stream_throttle_amount 4 //(default 10) fewer streaming ops per frame, smaller individual hitches, slightly slower texture pop-in
+
+r_particle_gpu_implicit_lds_cache 1 //(default false) — caches implicit particle data in GPU LDS (on-chip), fewer VRAM round-trips per particle. Try it.
+
+r_animatable_mesh_shaders 1 //(default false, cheat) — animatable meshes via GPU shader path instead of CPU skinning. Experimental-sounding name, test in bot match, watch for deformed models.
+
+thread_pool_option 0 
 
 //Everyone's always telling you to be humble. When was the last time someone told you to be great?
 
